@@ -9,7 +9,7 @@ def conn():
     try:
         connection = psycopg2.connect(user="postgres",
                                     password="tommal",
-                                    host="192.168.1.129",
+                                    host="tomasmali.it",
                                     port="5432",
                                     database="zara")
 
