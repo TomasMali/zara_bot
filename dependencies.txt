@@ -1,0 +1,7 @@
+telepot
+psycopg2
+requests
+pdfkit
+
+
+docker run -it -d --restart always --name c-ticket tommal/ticket
