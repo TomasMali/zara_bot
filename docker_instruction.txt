@@ -1,0 +1,6 @@
+
+
+
+docker run -it -d --restart always --name c-ticket tommal/ticket
+
+pip install dependencies.txt

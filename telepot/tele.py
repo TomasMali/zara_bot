@@ -69,7 +69,7 @@ def on_callback_query(msg):
 test = "5528961366:AAEiCxFr3VwObL3c1zzUXyTAZYRecBZMlWM"
 prod = "5769294017:AAFRYsF0J_gupg8OD-7UD2N-eWTuhCN3bqQ"
 
-bot = telepot.Bot(prod)
+bot = telepot.Bot(test)
 
 MessageLoop(bot, {'chat': on_chat_message,
                   'callback_query': on_callback_query}).run_as_thread()
