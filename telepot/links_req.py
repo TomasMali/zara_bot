@@ -44,8 +44,8 @@ def getLinks():
     links_list = []
 
 
-    for page_nr in range(100):
-        page = requests.get('https://www.zara.com/it/it/woman-special-edition-l5114.html?page=' + str(page_nr+1),headers=headers)
+    for page_nr in range(20):
+        page = requests.get('https://www.zara.com/it/it/woman-series-serie70-l3288.html?v1=2105810?page=' + str(page_nr+1),headers=headers)
         # If no page is founded exit
         if page.status_code != 200:
             print(page.status_code)
@@ -76,7 +76,7 @@ def getLinks():
 
 
 #getLinks()
-# print(getLinks()[0][1])
+#print(getLinks()[0][1])
 
 
 

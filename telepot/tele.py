@@ -69,7 +69,7 @@ def on_callback_query(msg):
 test = "5528961366:AAEiCxFr3VwObL3c1zzUXyTAZYRecBZMlWM"
 prod = "5769294017:AAFRYsF0J_gupg8OD-7UD2N-eWTuhCN3bqQ"
 
-bot = telepot.Bot(test)
+bot = telepot.Bot(prod)
 
 MessageLoop(bot, {'chat': on_chat_message,
                   'callback_query': on_callback_query}).run_as_thread()
@@ -79,7 +79,9 @@ starttime = time.time()
 while 1:
     print("\n tick ogni 10 sec \n")
     list_links = links_req.getLinks()
+    print('Links', list_links)
     users = user_sql.getUsers()
+    print('Users', users)
 
     for url in list_links:
       exsists = user_sql.link_present(url[0])
