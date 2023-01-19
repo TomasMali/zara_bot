@@ -8,44 +8,55 @@ from bs4 import BeautifulSoup
 def getLinks():
 
     cookies = {
-        'bm_sz': '72EA09655327DBC60B819CFF2CCE8420~YAAQfq4AF4x7qQWFAQAAZwYkiRI09psxoScFv30I6AXwrddXNjSPtQH72Y3kMc8utdE08oYb6pocjqjp68kBUthhg3Tx/doJhnPBNkKtDTtF1IGOYsHoq6oDGDu+0pktnfk/qEiRpFHPe9AjQque+6UOgAiKFlQCdbJDBrkSu6Kyng/sjODuxxqtkpdmInm0ofny+OuUkV0Fb8Csx8S2n60hwax4pt+wIFOPYp0VB0UjkoPzPZ9PkH8LlZKs16XLxuvRI2BmtmtMUgbEb1BpX54BZHLnFaHMJr5VFjAWmFrq~3622453~3158832',
-        'rid': '18e8360a-e5df-40c7-98ba-05972a099d63',
-        'cart-was-updated-in-standard': 'true',
-        'bm_mi': '5286D7B35E4F2810FD1B6CB41AC388D4~YAAQXa4AF1YDjYCFAQAAJ4MuiRJWk4cJ9ysGmb0V3D9NyEH0hbNwHEsP7L1dnrW0Wa2DogvftHO9EIRiBJx9kQ29VxneS7Z/t8Q50qUxDWiZG6ehqSgbeEZBEiEseV4l0FdGo32cCnuy3M8iM39QIXzLlGDq7A86BxJQM8fHjsnyp2tX2bOYV3NLeBb993SjrjwUnqiUniwCkonqHjeiz74FEdvRXde8cMt4TFEY9IQAd55n5hSqJasJhoV8f9Y3Y/6K+YQidR6FM58qTI0X3J1oE72sNLiUav4lvAIXejvs7QYVRL68L1Q9UZ9LvTM=~1',
-        'bm_sv': '28F909032E8BE0119F94301A0AF69CB0~YAAQXa4AF20DjYCFAQAAeoguiRL6RSRtE5oCNCtBaYoYM8PcvXSyl47ySQW4V8rVcgubLlqc05GIKPslRC5PnyIhdjdUxXvXFpziMT555T7aQ3jArDW/073j88CMdmB8VM2KkkrV0VI4MUO18dYBYdxIZcjAmpF20lfSvQC6iT1qWDyENzYnlM7H1J335EQHHj0Ku20py2aRx5Js2l6gT8oKH0ANY6+D5cmfhgxfLqlYIECTzCRLNyTANVFhTU8=~1',
-        'ak_bmsc': '260504C6B78401C0463FE84EC552F1CF~000000000000000000000000000000~YAAQXa4AF7UEjYCFAQAAuc8uiRIbLIXcIdLC2lqFaXPFWbvlFLTf9MJRtaYf7naN7s8z7r8NINtkxP3pvxMdEolkVU7qSiB3pje/ZR1OBi49E37X7dR6mlecdr6hepTqBiufNYWjawAcWh42Nz6VZRt258HHVOMdmddjahm2uchiTXNJEq7gbv1i6wy1cBJ+D4b8Qp3tdI8oOuCtFqwIoTjJ3ASIVqo0/doCzoFiU0nf5dnz03cmRMhouLPwi2fH6bfpn7JEd61lPuNX4isWrd/SW3DGMq2z0mPubsHI1lkwWJp+T0/rQ4xgOrGLv7c3tDU+9ClvVFYydgjE5CihNmk30oIg5kpHc/hkNnWMiCMWZ3DJvdErN18Pd4ZIqWEftAY0PSrJcDLQehKVFIT/n9aecGPUkbLxwtguO6nNOv3pLies7jd32Y5kpX+8QqN4oBCICBmgKlAJRrqao0wb3/nWY68H92HHk7Re6nct',
-        '_abck': 'B1D1620173C3DE54189F328008980DDE~0~YAAQda4AF2F5HnWFAQAAXwEziQlhEfymKiUQvAx2/KRYAlkhDQa+0kqnDIm1v7ULL5m5ZQPyDtm7YOIcEtjHvbA7Q87qM9nleCAwlqY5VN8C7A1FHHwkwxGct7+hKBKK9HYxkByvWVHsukprlnzIa7Gr7QVBM9QtmaahtrjyBlstXtitN4XNXMiJ2GggC4yq2E+xoAK4XgYm2cfChY/BN7q9Cklyrb7BY5j9Bk4/wplH48HWNttSF06oRjSAnfIBJwe27aqTBt4GhPPh0bZbctXPKT7d2IXiiUxpHPd8q2Sp0Lzb7MEta5w/MDolvD1800q4OYm1L1MOI0XmL1i2nQTDCwpgnQ/JIUFJZF/YJdc9qPQAidnVER17u6Dtu0G7A0hSdj4q08sa4sZPl10MZMDi1h1dEA==~-1~-1~-1',
-        'ITXSESSIONID': 'a38920cd27782a76e3032e00e8ce17a6',
-        'IDROSTA': '1ca8058f6a8f:2276d45e94505ec2d5d69a78d',
-        'OptanonConsent': 'isGpcEnabled=0&datestamp=Fri+Jan+06+2023+23%3A28%3A47+GMT%2B0100+(Ora+standard+dell%E2%80%99Europa+centrale)&version=6.28.0&isIABGlobal=false&hosts=&consentId=f1fd5313-b1f0-477b-a128-c2cb059868f1&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0002%3A1%2CC0003%3A1%2CC0004%3A1&geolocation=CH%3BZH&AwaitingReconsent=false',
-        'OptanonAlertBoxClosed': '2023-01-06T22:28:47.144Z',
+        'rid': '21fbe0fa-f2fa-4691-8120-75054458243e',
         'storepath': 'it%2Fit',
+        'OptanonAlertBoxClosed': '2023-01-18T22:45:01.565Z',
+        'migrated': 'true',
+        'bm_sz': 'F9C51C7875F4E7FCA66F8C097E61D14E~YAAQBocQAmplEXaFAQAAoPdnyxIk+0rV8CLajcoPZTOBPre6AIjvlqBDPXobUrliujRR3C8R3EMNbprv2d+IJsLbIPZXu0YoJ7cdhD/HiQO45ut55pk0WFGpoCy1bHMuwAkf9fC88baYMBhlgMqLHKmmpn8zGxhjm0c/6asAuTIZmTPlXFRQZz6U/2og41C+rZPE30olW+sn//uy5hRZmLN7/DBICv8Sk3RtP4qFstrZkrW+tft3jW+lbUtJbwmf2ItV23cpdKNqb8AjaobUkrw6JZ+ha91YPphummXLexvT~3159619~4535361',
+        'cart-was-updated-in-standard': 'true',
+        'bm_mi': 'ABCB2EA78B51442D9D9F0E38EC659BE4~YAAQBocQAmVsEXaFAQAAcL5oyxKQyxYs16D1z+jbCyIP1tD932UmMjjwx0+zczYEoqYf0elbuxKH297sHsamW8fD38SlVBO6fPdii6h1HqCwDXzq6o3FD8lOBqsIrUZ7TcpsPwIrFo86pBwRKmpSOCCj+TEVrGlY4Kw0d781E+US49oj+GMZabsOHEKc4D9UrzBLY/R2GaoOd5qeuMawdS4iao9ZmsruBeWxBDq35acx3A/IyP15tUa9kq5lyS1qzPf2yJsuEvPgAm0sYnpJWGZCRGYTlB4m9HGSkwab4/CpxsN2TT+hzMARXb+VxkwzVjqmEOBo0dd0grFDwuaRhlj/xuheZ25EPcSHvUGzt34=~1',
+        'bm_sv': '8243029438CA497B44A97007B8D147D6~YAAQBocQAtptEXaFAQAA1/JoyxJM+PENKjf0iP2ICFla1sC6g/xnzMRpqoeioPwX2/GcBahUj/u/DBkimGIjw0EJiI++9ERfUoo8NHo/oVtLee4VhaKNEBkDjvN3d7/FvVCiqIyg00jWS/fS3BtEadVnk4kPW/mkP5ZJ/wXgFAWtLlnNKOzaIV8F6mFIEU8c94qqR8o8FkbF4CuVmZrI4j5s6LR/DLMsKmAe6OYjnYnC14wztawi8Th2g8VInmw=~1',
+        'ITXSESSIONID': 'b7997086b8649f22dd009a774b3396da',
+        'IDROSTA': '437e9f12f077:2fddafe87800b3ccb975bf77d',
+        'OptanonConsent': 'isGpcEnabled=0&datestamp=Thu+Jan+19+2023+20%3A20%3A55+GMT%2B0100+(Ora+standard+dell%E2%80%99Europa+centrale)&version=6.28.0&isIABGlobal=false&hosts=&consentId=78e8f2ca-2010-49be-a2fe-125a232b071d&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0002%3A1%2CC0003%3A1%2CC0004%3A1&geolocation=IT%3B34&AwaitingReconsent=false',
+        '_abck': '3E6AFB0791922E22A17904BBE6F2A5E1~0~YAAQWAsVAr2xy5uFAQAARGh7ywlsCXCeUnh3G/1KfKtrTDy+R3QSZGftppe3uJsCO/rSTUblSqP1HTV+8jfp/Sut2Q5XqF890AbEloDpz/rr+Cthd/61/wJn+TYRxioOuYU8QeM1+PiiZUkubOEgPdybtfp5htY6hd6kU9JX07nOZsSAKsyKtLBpaepusHaGtbxdTIxnj6qug5e1GYm9WSk5JGDpOtXMWb351IdcwtIrZpdgQUw+ycP0J3sabMkiEjPfKpyY23Z9pqu0/Kja20aoUsGtuFw80nIaWvsuYR6k71QGWuG2NfUimNzzFLmht8vEqG72NEzeQpYGB+F8cRVoh9GeiHt06OcTcNIXrBk1wUUsWrhgd3IiWka0SMpA3CfBPfuIFr4t2SWV2ojHgIQ06NUc~-1~-1~-1',
+        'ak_bmsc': '50BAF0B313E3395FE4D8039AD8132BCC~000000000000000000000000000000~YAAQWAsVAt60y5uFAQAAYa57yxKEp7zYyb4HUlKqHRPU9wvvjm5dHpaqEuTgRgH1TKvuGVrLErOd8T1G2ej0HyuiON42SsVxbASd1cyiYlBih5QH3v30vgCVW/SnVuZdlbRBbfuPbm1nQlUhIAA2+ybOZNG6hEeGX12mI/4cR6NR6gxv5Pj+eMhzuEbj/qnVnxJiaenQdGz+/P7fhlxONnDjfcJgfj2l53LZMWDuwnMIx88zin8exhLnGZ/vApKu5BsukgFoaWwojemzJ977Q5kUHPpXwEdY/BWcyF6zsvWM0dlXJUYVIWsRMpfV47pvwWn+M1ZBbSoUKATOnEiblz5XcqTffsBJs3k0hydXhvb4aXa1hu/6ZSsO3DlbK5+DNaobW++GWXtB+/Y47RWtza0A0U2WzrHWZSkcgEHnRPjyFj43P5aQ5l+2BcX3Ij/VhNNRqDttVMHtw0WBDyeKWHEFgXCbAfZXBTR+PjRHQTf1nsgBK7XDZZ/D/Wd0nqA5Bx7AtdgKLOyUjlM3Mw0gFwmNoB0Y5TouAwuAcgl8MnZ2UUSzcqe9rbg=',
     }
 
     headers = {
         'authority': 'www.zara.com',
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
         'accept-language': 'it-IT,it;q=0.9,la;q=0.8',
-        'cache-control': 'max-age=0',
-        # 'cookie': 'bm_sz=72EA09655327DBC60B819CFF2CCE8420~YAAQfq4AF4x7qQWFAQAAZwYkiRI09psxoScFv30I6AXwrddXNjSPtQH72Y3kMc8utdE08oYb6pocjqjp68kBUthhg3Tx/doJhnPBNkKtDTtF1IGOYsHoq6oDGDu+0pktnfk/qEiRpFHPe9AjQque+6UOgAiKFlQCdbJDBrkSu6Kyng/sjODuxxqtkpdmInm0ofny+OuUkV0Fb8Csx8S2n60hwax4pt+wIFOPYp0VB0UjkoPzPZ9PkH8LlZKs16XLxuvRI2BmtmtMUgbEb1BpX54BZHLnFaHMJr5VFjAWmFrq~3622453~3158832; rid=18e8360a-e5df-40c7-98ba-05972a099d63; cart-was-updated-in-standard=true; bm_mi=5286D7B35E4F2810FD1B6CB41AC388D4~YAAQXa4AF1YDjYCFAQAAJ4MuiRJWk4cJ9ysGmb0V3D9NyEH0hbNwHEsP7L1dnrW0Wa2DogvftHO9EIRiBJx9kQ29VxneS7Z/t8Q50qUxDWiZG6ehqSgbeEZBEiEseV4l0FdGo32cCnuy3M8iM39QIXzLlGDq7A86BxJQM8fHjsnyp2tX2bOYV3NLeBb993SjrjwUnqiUniwCkonqHjeiz74FEdvRXde8cMt4TFEY9IQAd55n5hSqJasJhoV8f9Y3Y/6K+YQidR6FM58qTI0X3J1oE72sNLiUav4lvAIXejvs7QYVRL68L1Q9UZ9LvTM=~1; bm_sv=28F909032E8BE0119F94301A0AF69CB0~YAAQXa4AF20DjYCFAQAAeoguiRL6RSRtE5oCNCtBaYoYM8PcvXSyl47ySQW4V8rVcgubLlqc05GIKPslRC5PnyIhdjdUxXvXFpziMT555T7aQ3jArDW/073j88CMdmB8VM2KkkrV0VI4MUO18dYBYdxIZcjAmpF20lfSvQC6iT1qWDyENzYnlM7H1J335EQHHj0Ku20py2aRx5Js2l6gT8oKH0ANY6+D5cmfhgxfLqlYIECTzCRLNyTANVFhTU8=~1; ak_bmsc=260504C6B78401C0463FE84EC552F1CF~000000000000000000000000000000~YAAQXa4AF7UEjYCFAQAAuc8uiRIbLIXcIdLC2lqFaXPFWbvlFLTf9MJRtaYf7naN7s8z7r8NINtkxP3pvxMdEolkVU7qSiB3pje/ZR1OBi49E37X7dR6mlecdr6hepTqBiufNYWjawAcWh42Nz6VZRt258HHVOMdmddjahm2uchiTXNJEq7gbv1i6wy1cBJ+D4b8Qp3tdI8oOuCtFqwIoTjJ3ASIVqo0/doCzoFiU0nf5dnz03cmRMhouLPwi2fH6bfpn7JEd61lPuNX4isWrd/SW3DGMq2z0mPubsHI1lkwWJp+T0/rQ4xgOrGLv7c3tDU+9ClvVFYydgjE5CihNmk30oIg5kpHc/hkNnWMiCMWZ3DJvdErN18Pd4ZIqWEftAY0PSrJcDLQehKVFIT/n9aecGPUkbLxwtguO6nNOv3pLies7jd32Y5kpX+8QqN4oBCICBmgKlAJRrqao0wb3/nWY68H92HHk7Re6nct; _abck=B1D1620173C3DE54189F328008980DDE~0~YAAQda4AF2F5HnWFAQAAXwEziQlhEfymKiUQvAx2/KRYAlkhDQa+0kqnDIm1v7ULL5m5ZQPyDtm7YOIcEtjHvbA7Q87qM9nleCAwlqY5VN8C7A1FHHwkwxGct7+hKBKK9HYxkByvWVHsukprlnzIa7Gr7QVBM9QtmaahtrjyBlstXtitN4XNXMiJ2GggC4yq2E+xoAK4XgYm2cfChY/BN7q9Cklyrb7BY5j9Bk4/wplH48HWNttSF06oRjSAnfIBJwe27aqTBt4GhPPh0bZbctXPKT7d2IXiiUxpHPd8q2Sp0Lzb7MEta5w/MDolvD1800q4OYm1L1MOI0XmL1i2nQTDCwpgnQ/JIUFJZF/YJdc9qPQAidnVER17u6Dtu0G7A0hSdj4q08sa4sZPl10MZMDi1h1dEA==~-1~-1~-1; ITXSESSIONID=a38920cd27782a76e3032e00e8ce17a6; IDROSTA=1ca8058f6a8f:2276d45e94505ec2d5d69a78d; OptanonConsent=isGpcEnabled=0&datestamp=Fri+Jan+06+2023+23%3A28%3A47+GMT%2B0100+(Ora+standard+dell%E2%80%99Europa+centrale)&version=6.28.0&isIABGlobal=false&hosts=&consentId=f1fd5313-b1f0-477b-a128-c2cb059868f1&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0002%3A1%2CC0003%3A1%2CC0004%3A1&geolocation=CH%3BZH&AwaitingReconsent=false; OptanonAlertBoxClosed=2023-01-06T22:28:47.144Z; storepath=it%2Fit',
-        'if-none-match': 'W/"f9aa1-xqv4vyd4xQuYk6MuoZnOAQ9g+3g"',
-        'sec-ch-ua': '"Not?A_Brand";v="8", "Chromium";v="108", "Google Chrome";v="108"',
+        # 'cookie': 'rid=21fbe0fa-f2fa-4691-8120-75054458243e; storepath=it%2Fit; OptanonAlertBoxClosed=2023-01-18T22:45:01.565Z; migrated=true; bm_sz=F9C51C7875F4E7FCA66F8C097E61D14E~YAAQBocQAmplEXaFAQAAoPdnyxIk+0rV8CLajcoPZTOBPre6AIjvlqBDPXobUrliujRR3C8R3EMNbprv2d+IJsLbIPZXu0YoJ7cdhD/HiQO45ut55pk0WFGpoCy1bHMuwAkf9fC88baYMBhlgMqLHKmmpn8zGxhjm0c/6asAuTIZmTPlXFRQZz6U/2og41C+rZPE30olW+sn//uy5hRZmLN7/DBICv8Sk3RtP4qFstrZkrW+tft3jW+lbUtJbwmf2ItV23cpdKNqb8AjaobUkrw6JZ+ha91YPphummXLexvT~3159619~4535361; cart-was-updated-in-standard=true; bm_mi=ABCB2EA78B51442D9D9F0E38EC659BE4~YAAQBocQAmVsEXaFAQAAcL5oyxKQyxYs16D1z+jbCyIP1tD932UmMjjwx0+zczYEoqYf0elbuxKH297sHsamW8fD38SlVBO6fPdii6h1HqCwDXzq6o3FD8lOBqsIrUZ7TcpsPwIrFo86pBwRKmpSOCCj+TEVrGlY4Kw0d781E+US49oj+GMZabsOHEKc4D9UrzBLY/R2GaoOd5qeuMawdS4iao9ZmsruBeWxBDq35acx3A/IyP15tUa9kq5lyS1qzPf2yJsuEvPgAm0sYnpJWGZCRGYTlB4m9HGSkwab4/CpxsN2TT+hzMARXb+VxkwzVjqmEOBo0dd0grFDwuaRhlj/xuheZ25EPcSHvUGzt34=~1; bm_sv=8243029438CA497B44A97007B8D147D6~YAAQBocQAtptEXaFAQAA1/JoyxJM+PENKjf0iP2ICFla1sC6g/xnzMRpqoeioPwX2/GcBahUj/u/DBkimGIjw0EJiI++9ERfUoo8NHo/oVtLee4VhaKNEBkDjvN3d7/FvVCiqIyg00jWS/fS3BtEadVnk4kPW/mkP5ZJ/wXgFAWtLlnNKOzaIV8F6mFIEU8c94qqR8o8FkbF4CuVmZrI4j5s6LR/DLMsKmAe6OYjnYnC14wztawi8Th2g8VInmw=~1; ITXSESSIONID=b7997086b8649f22dd009a774b3396da; IDROSTA=437e9f12f077:2fddafe87800b3ccb975bf77d; OptanonConsent=isGpcEnabled=0&datestamp=Thu+Jan+19+2023+20%3A20%3A55+GMT%2B0100+(Ora+standard+dell%E2%80%99Europa+centrale)&version=6.28.0&isIABGlobal=false&hosts=&consentId=78e8f2ca-2010-49be-a2fe-125a232b071d&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0002%3A1%2CC0003%3A1%2CC0004%3A1&geolocation=IT%3B34&AwaitingReconsent=false; _abck=3E6AFB0791922E22A17904BBE6F2A5E1~0~YAAQWAsVAr2xy5uFAQAARGh7ywlsCXCeUnh3G/1KfKtrTDy+R3QSZGftppe3uJsCO/rSTUblSqP1HTV+8jfp/Sut2Q5XqF890AbEloDpz/rr+Cthd/61/wJn+TYRxioOuYU8QeM1+PiiZUkubOEgPdybtfp5htY6hd6kU9JX07nOZsSAKsyKtLBpaepusHaGtbxdTIxnj6qug5e1GYm9WSk5JGDpOtXMWb351IdcwtIrZpdgQUw+ycP0J3sabMkiEjPfKpyY23Z9pqu0/Kja20aoUsGtuFw80nIaWvsuYR6k71QGWuG2NfUimNzzFLmht8vEqG72NEzeQpYGB+F8cRVoh9GeiHt06OcTcNIXrBk1wUUsWrhgd3IiWka0SMpA3CfBPfuIFr4t2SWV2ojHgIQ06NUc~-1~-1~-1; ak_bmsc=50BAF0B313E3395FE4D8039AD8132BCC~000000000000000000000000000000~YAAQWAsVAt60y5uFAQAAYa57yxKEp7zYyb4HUlKqHRPU9wvvjm5dHpaqEuTgRgH1TKvuGVrLErOd8T1G2ej0HyuiON42SsVxbASd1cyiYlBih5QH3v30vgCVW/SnVuZdlbRBbfuPbm1nQlUhIAA2+ybOZNG6hEeGX12mI/4cR6NR6gxv5Pj+eMhzuEbj/qnVnxJiaenQdGz+/P7fhlxONnDjfcJgfj2l53LZMWDuwnMIx88zin8exhLnGZ/vApKu5BsukgFoaWwojemzJ977Q5kUHPpXwEdY/BWcyF6zsvWM0dlXJUYVIWsRMpfV47pvwWn+M1ZBbSoUKATOnEiblz5XcqTffsBJs3k0hydXhvb4aXa1hu/6ZSsO3DlbK5+DNaobW++GWXtB+/Y47RWtza0A0U2WzrHWZSkcgEHnRPjyFj43P5aQ5l+2BcX3Ij/VhNNRqDttVMHtw0WBDyeKWHEFgXCbAfZXBTR+PjRHQTf1nsgBK7XDZZ/D/Wd0nqA5Bx7AtdgKLOyUjlM3Mw0gFwmNoB0Y5TouAwuAcgl8MnZ2UUSzcqe9rbg=',
+        'referer': 'https://www.zara.com/it/it/woman-series-serie70-l3288.html?v1=2105810',
+        'sec-ch-ua': '"Not_A Brand";v="99", "Google Chrome";v="109", "Chromium";v="109"',
         'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"macOS"',
+        'sec-ch-ua-platform': '"Linux"',
         'sec-fetch-dest': 'document',
         'sec-fetch-mode': 'navigate',
-        'sec-fetch-site': 'none',
-        'sec-fetch-user': '?1',
+        'sec-fetch-site': 'same-origin',
         'upgrade-insecure-requests': '1',
-        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36',
+        'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36',
     }
+
+    params = {
+        'v1': '2105810',
+    }
+
+
+
 
 
     links_list = []
 
 
-    for page_nr in range(20):
-        page = requests.get('https://www.zara.com/it/it/woman-series-serie70-l3288.html?v1=2105810?page=' + str(page_nr+1),headers=headers)
+    for page_nr in range(10):
+        page =  requests.get(
+                   'https://www.zara.com/it/it/woman-series-serie70-l3288.html',
+                    params=params,
+                    cookies=cookies,
+                    headers=headers,
+                    )
         # If no page is founded exit
         if page.status_code != 200:
             print(page.status_code)
@@ -53,6 +64,7 @@ def getLinks():
 
         soup = BeautifulSoup(page.content, "html.parser")
         ul_list = soup.find_all("ul", class_="product-grid__product-list")
+        print(ul_list)
         for ul in ul_list:
             li_list = ul.find_all("li", class_="product-grid-block-dynamic")
 
