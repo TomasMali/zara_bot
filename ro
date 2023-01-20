@@ -1,0 +1,1 @@
+=IF([ORATRI]<>0;CONCATENATE(MID([ORATRI];1;2);" : ";MID([ORATRI];3;2););"")

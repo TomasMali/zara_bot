@@ -7,28 +7,30 @@ from bs4 import BeautifulSoup
 
 def getLinks():
 
+
+
     cookies = {
         'rid': '21fbe0fa-f2fa-4691-8120-75054458243e',
         'storepath': 'it%2Fit',
         'OptanonAlertBoxClosed': '2023-01-18T22:45:01.565Z',
         'migrated': 'true',
-        'bm_sz': 'F9C51C7875F4E7FCA66F8C097E61D14E~YAAQBocQAmplEXaFAQAAoPdnyxIk+0rV8CLajcoPZTOBPre6AIjvlqBDPXobUrliujRR3C8R3EMNbprv2d+IJsLbIPZXu0YoJ7cdhD/HiQO45ut55pk0WFGpoCy1bHMuwAkf9fC88baYMBhlgMqLHKmmpn8zGxhjm0c/6asAuTIZmTPlXFRQZz6U/2og41C+rZPE30olW+sn//uy5hRZmLN7/DBICv8Sk3RtP4qFstrZkrW+tft3jW+lbUtJbwmf2ItV23cpdKNqb8AjaobUkrw6JZ+ha91YPphummXLexvT~3159619~4535361',
+        'bm_sz': '4F81DEF957F0F1FB545D6C50EFC316EB~YAAQFmURAh21Jc6FAQAAU0jbzxI96PC/hVh0VMIiI9C+N+OViQ5QswoBM71jaR3eQ9Onj52MqcxCr2rKJz2Oc7FFDxGB87Nrf/YYJYNmClzt97H5vlnJIbF3xNn0ZF/q1aSp6yEOiAAWtbOp6pCxRzAdHSPCY3eJVjvoGSv8g80n7izFJBXYlUUrtDaW4ikj9zxUWLet2H62LchzCbjMTXbKQ+uRDoqNiVyeApzMuSEC/OVvvn1Hw4LV1xYDGzrYrnA0H4w94MCNI8EpM862JXiFo9Vwn6Ri+ARsuB3jB9nF~4273204~4538935',
+        'bm_mi': '061D1F0CEA3474EC36F692657C663E9C~YAAQFmURAjS1Jc6FAQAAzUnbzxLawp8+RLRTbt8ysrjzkZbyTxKSP0Ry3vlfWDDAMbKCDIrKDnUhR4JwRVQ9coLjrjViE2x93y705IhrjIHKVeyWAnizg+9W/s3Byl+LEYUSvucPTY2wKI/y0tzcUn58Vp6Wb53DVjIn5Zq+2LNuPzYMs2UUhanE8CmQ4x3Q/CG2Iv6biIqldG9JXbnNWCS3VJk0qfe+aUOwXphdLoR7CfmD2SkNkiBFu8foE6VqlZ9Y8B/e/FuRE9V3umSXdaKUyG99uofRnvOCfNwOE0i4GL92GccJ4hghdpC4TBU=~1',
+        'ITXSESSIONID': 'ad27220a9d834b6fa3a3ac280c8c4b0a',
+        'IDROSTA': '6bfb66adb6f9:1c60ef0fb755a418886f40c0b',
         'cart-was-updated-in-standard': 'true',
-        'bm_mi': 'ABCB2EA78B51442D9D9F0E38EC659BE4~YAAQBocQAmVsEXaFAQAAcL5oyxKQyxYs16D1z+jbCyIP1tD932UmMjjwx0+zczYEoqYf0elbuxKH297sHsamW8fD38SlVBO6fPdii6h1HqCwDXzq6o3FD8lOBqsIrUZ7TcpsPwIrFo86pBwRKmpSOCCj+TEVrGlY4Kw0d781E+US49oj+GMZabsOHEKc4D9UrzBLY/R2GaoOd5qeuMawdS4iao9ZmsruBeWxBDq35acx3A/IyP15tUa9kq5lyS1qzPf2yJsuEvPgAm0sYnpJWGZCRGYTlB4m9HGSkwab4/CpxsN2TT+hzMARXb+VxkwzVjqmEOBo0dd0grFDwuaRhlj/xuheZ25EPcSHvUGzt34=~1',
-        'bm_sv': '8243029438CA497B44A97007B8D147D6~YAAQBocQAtptEXaFAQAA1/JoyxJM+PENKjf0iP2ICFla1sC6g/xnzMRpqoeioPwX2/GcBahUj/u/DBkimGIjw0EJiI++9ERfUoo8NHo/oVtLee4VhaKNEBkDjvN3d7/FvVCiqIyg00jWS/fS3BtEadVnk4kPW/mkP5ZJ/wXgFAWtLlnNKOzaIV8F6mFIEU8c94qqR8o8FkbF4CuVmZrI4j5s6LR/DLMsKmAe6OYjnYnC14wztawi8Th2g8VInmw=~1',
-        'ITXSESSIONID': 'b7997086b8649f22dd009a774b3396da',
-        'IDROSTA': '437e9f12f077:2fddafe87800b3ccb975bf77d',
-        'OptanonConsent': 'isGpcEnabled=0&datestamp=Thu+Jan+19+2023+20%3A20%3A55+GMT%2B0100+(Ora+standard+dell%E2%80%99Europa+centrale)&version=6.28.0&isIABGlobal=false&hosts=&consentId=78e8f2ca-2010-49be-a2fe-125a232b071d&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0002%3A1%2CC0003%3A1%2CC0004%3A1&geolocation=IT%3B34&AwaitingReconsent=false',
-        '_abck': '3E6AFB0791922E22A17904BBE6F2A5E1~0~YAAQWAsVAr2xy5uFAQAARGh7ywlsCXCeUnh3G/1KfKtrTDy+R3QSZGftppe3uJsCO/rSTUblSqP1HTV+8jfp/Sut2Q5XqF890AbEloDpz/rr+Cthd/61/wJn+TYRxioOuYU8QeM1+PiiZUkubOEgPdybtfp5htY6hd6kU9JX07nOZsSAKsyKtLBpaepusHaGtbxdTIxnj6qug5e1GYm9WSk5JGDpOtXMWb351IdcwtIrZpdgQUw+ycP0J3sabMkiEjPfKpyY23Z9pqu0/Kja20aoUsGtuFw80nIaWvsuYR6k71QGWuG2NfUimNzzFLmht8vEqG72NEzeQpYGB+F8cRVoh9GeiHt06OcTcNIXrBk1wUUsWrhgd3IiWka0SMpA3CfBPfuIFr4t2SWV2ojHgIQ06NUc~-1~-1~-1',
-        'ak_bmsc': '50BAF0B313E3395FE4D8039AD8132BCC~000000000000000000000000000000~YAAQWAsVAt60y5uFAQAAYa57yxKEp7zYyb4HUlKqHRPU9wvvjm5dHpaqEuTgRgH1TKvuGVrLErOd8T1G2ej0HyuiON42SsVxbASd1cyiYlBih5QH3v30vgCVW/SnVuZdlbRBbfuPbm1nQlUhIAA2+ybOZNG6hEeGX12mI/4cR6NR6gxv5Pj+eMhzuEbj/qnVnxJiaenQdGz+/P7fhlxONnDjfcJgfj2l53LZMWDuwnMIx88zin8exhLnGZ/vApKu5BsukgFoaWwojemzJ977Q5kUHPpXwEdY/BWcyF6zsvWM0dlXJUYVIWsRMpfV47pvwWn+M1ZBbSoUKATOnEiblz5XcqTffsBJs3k0hydXhvb4aXa1hu/6ZSsO3DlbK5+DNaobW++GWXtB+/Y47RWtza0A0U2WzrHWZSkcgEHnRPjyFj43P5aQ5l+2BcX3Ij/VhNNRqDttVMHtw0WBDyeKWHEFgXCbAfZXBTR+PjRHQTf1nsgBK7XDZZ/D/Wd0nqA5Bx7AtdgKLOyUjlM3Mw0gFwmNoB0Y5TouAwuAcgl8MnZ2UUSzcqe9rbg=',
+        'OptanonConsent': 'isGpcEnabled=0&datestamp=Fri+Jan+20+2023+16%3A45%3A52+GMT%2B0100+(Ora+standard+dell%E2%80%99Europa+centrale)&version=6.28.0&isIABGlobal=false&hosts=&consentId=78e8f2ca-2010-49be-a2fe-125a232b071d&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0002%3A1%2CC0003%3A1%2CC0004%3A1&geolocation=IT%3B34&AwaitingReconsent=false',
+        '_abck': '3E6AFB0791922E22A17904BBE6F2A5E1~-1~YAAQJmURAjB2GMOFAQAAdqTdzwmKXJBwsl6qxmagZdfTLc/QzCziVat86Sw5WGOk+pJYMIrudSh9ucDskeD8jYvab1FSrsL/Z+8OTyepjG8Ls4LJw3QMZgLTXEk8vhoPU0W6LLqz5vthDJDSYKYrCHeYflK+HiOytzNpEDnvi4aNrSzF5sfZ0C0Psm7ux2Xgf4/SnS3QXR05yv4XVrG4jULoNm70HYjMPjPPU+x49X9B6OWjYeTmXFOHZ/oMGUYz5l37CAC53CF0Q/r3vOjI9wn4eXy7oyQvfuWM2YxwUQAK5oajjCc3JN1P6qyCxwxS+NKu7ihEtljNeWp76VNYpKlUFHLPajAcR9M/k6RDvHqVWpRxwU1RGRrimJ1f3L62tp3VVhvsgs0wjPh70HH/Rdlqz/zi~0~-1~-1',
+        'ak_bmsc': 'DAF1D88845050C877F2745B43615FD61~000000000000000000000000000000~YAAQJmURAjl2GMOFAQAAYqXdzxKoD5eUbeRh9VTy/Mw6WtttbJhueJQA0w/ybektBX5W9fihSYu0j0N96I/H3XCebtApXOE5N38+qNxVyXGIailm3c/WjrdWZEHO0wENQNgZqPOm6FM0mEInP6aBghxmiFgfy+VE2R7T+rFiNVAd884O4BqnnfOpDIgnduWYLxcCD+tA6DfP0Vl/Ypyc4gn/PHs2MKAN+fXI4R+lC2WE/JpF3zqkjw+QXaX4nzQ0IM1OE5i7Bc+fGfJycPmb8Lc80cIeVtgDvItXy/HZnY/84wtE0dwc2sVnELVAUAmSuaB9MzH0KFIFRLNkyvxjkHGne0+8c/xa5lLhoIXuXToA52IFRhbff2hJ5a3EUgXab0Mt2f9a4LxMgwydtNqQ6GuimftoeAneqDPYI6EOI/XEa6ELm3AsbGl4G4MGXoAyK65bJw51jirXFyHftijnNdnHleLHZSLbkit4ydGSA91gjcAS2A==',
+        'bm_sv': 'F9EE7264D11CF28D68A6F03714B2FF0F~YAAQJmURAjp2GMOFAQAAYqXdzxItN945go7i2bjwgs35vnQMvbNZehYrnmME5oH6+bsMJyCx38QMOfuf70SiNCixkFPNJxDKoZnzUV0x0YpguAnXeyI9V7uH9VjmSNnhdkihBFIWMmPOltz8FtHUulYtHXcacLv0OcIQgRsXEWMwgq1wNtof84VXDuo5CpgqsUaBus0CO0C1lrAlSQQvW4PMy1HHqCDU1v3gAnX2O9aljaK6CVd6cPYx1kuPHY4=~1',
     }
 
     headers = {
         'authority': 'www.zara.com',
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
         'accept-language': 'it-IT,it;q=0.9,la;q=0.8',
-        # 'cookie': 'rid=21fbe0fa-f2fa-4691-8120-75054458243e; storepath=it%2Fit; OptanonAlertBoxClosed=2023-01-18T22:45:01.565Z; migrated=true; bm_sz=F9C51C7875F4E7FCA66F8C097E61D14E~YAAQBocQAmplEXaFAQAAoPdnyxIk+0rV8CLajcoPZTOBPre6AIjvlqBDPXobUrliujRR3C8R3EMNbprv2d+IJsLbIPZXu0YoJ7cdhD/HiQO45ut55pk0WFGpoCy1bHMuwAkf9fC88baYMBhlgMqLHKmmpn8zGxhjm0c/6asAuTIZmTPlXFRQZz6U/2og41C+rZPE30olW+sn//uy5hRZmLN7/DBICv8Sk3RtP4qFstrZkrW+tft3jW+lbUtJbwmf2ItV23cpdKNqb8AjaobUkrw6JZ+ha91YPphummXLexvT~3159619~4535361; cart-was-updated-in-standard=true; bm_mi=ABCB2EA78B51442D9D9F0E38EC659BE4~YAAQBocQAmVsEXaFAQAAcL5oyxKQyxYs16D1z+jbCyIP1tD932UmMjjwx0+zczYEoqYf0elbuxKH297sHsamW8fD38SlVBO6fPdii6h1HqCwDXzq6o3FD8lOBqsIrUZ7TcpsPwIrFo86pBwRKmpSOCCj+TEVrGlY4Kw0d781E+US49oj+GMZabsOHEKc4D9UrzBLY/R2GaoOd5qeuMawdS4iao9ZmsruBeWxBDq35acx3A/IyP15tUa9kq5lyS1qzPf2yJsuEvPgAm0sYnpJWGZCRGYTlB4m9HGSkwab4/CpxsN2TT+hzMARXb+VxkwzVjqmEOBo0dd0grFDwuaRhlj/xuheZ25EPcSHvUGzt34=~1; bm_sv=8243029438CA497B44A97007B8D147D6~YAAQBocQAtptEXaFAQAA1/JoyxJM+PENKjf0iP2ICFla1sC6g/xnzMRpqoeioPwX2/GcBahUj/u/DBkimGIjw0EJiI++9ERfUoo8NHo/oVtLee4VhaKNEBkDjvN3d7/FvVCiqIyg00jWS/fS3BtEadVnk4kPW/mkP5ZJ/wXgFAWtLlnNKOzaIV8F6mFIEU8c94qqR8o8FkbF4CuVmZrI4j5s6LR/DLMsKmAe6OYjnYnC14wztawi8Th2g8VInmw=~1; ITXSESSIONID=b7997086b8649f22dd009a774b3396da; IDROSTA=437e9f12f077:2fddafe87800b3ccb975bf77d; OptanonConsent=isGpcEnabled=0&datestamp=Thu+Jan+19+2023+20%3A20%3A55+GMT%2B0100+(Ora+standard+dell%E2%80%99Europa+centrale)&version=6.28.0&isIABGlobal=false&hosts=&consentId=78e8f2ca-2010-49be-a2fe-125a232b071d&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0002%3A1%2CC0003%3A1%2CC0004%3A1&geolocation=IT%3B34&AwaitingReconsent=false; _abck=3E6AFB0791922E22A17904BBE6F2A5E1~0~YAAQWAsVAr2xy5uFAQAARGh7ywlsCXCeUnh3G/1KfKtrTDy+R3QSZGftppe3uJsCO/rSTUblSqP1HTV+8jfp/Sut2Q5XqF890AbEloDpz/rr+Cthd/61/wJn+TYRxioOuYU8QeM1+PiiZUkubOEgPdybtfp5htY6hd6kU9JX07nOZsSAKsyKtLBpaepusHaGtbxdTIxnj6qug5e1GYm9WSk5JGDpOtXMWb351IdcwtIrZpdgQUw+ycP0J3sabMkiEjPfKpyY23Z9pqu0/Kja20aoUsGtuFw80nIaWvsuYR6k71QGWuG2NfUimNzzFLmht8vEqG72NEzeQpYGB+F8cRVoh9GeiHt06OcTcNIXrBk1wUUsWrhgd3IiWka0SMpA3CfBPfuIFr4t2SWV2ojHgIQ06NUc~-1~-1~-1; ak_bmsc=50BAF0B313E3395FE4D8039AD8132BCC~000000000000000000000000000000~YAAQWAsVAt60y5uFAQAAYa57yxKEp7zYyb4HUlKqHRPU9wvvjm5dHpaqEuTgRgH1TKvuGVrLErOd8T1G2ej0HyuiON42SsVxbASd1cyiYlBih5QH3v30vgCVW/SnVuZdlbRBbfuPbm1nQlUhIAA2+ybOZNG6hEeGX12mI/4cR6NR6gxv5Pj+eMhzuEbj/qnVnxJiaenQdGz+/P7fhlxONnDjfcJgfj2l53LZMWDuwnMIx88zin8exhLnGZ/vApKu5BsukgFoaWwojemzJ977Q5kUHPpXwEdY/BWcyF6zsvWM0dlXJUYVIWsRMpfV47pvwWn+M1ZBbSoUKATOnEiblz5XcqTffsBJs3k0hydXhvb4aXa1hu/6ZSsO3DlbK5+DNaobW++GWXtB+/Y47RWtza0A0U2WzrHWZSkcgEHnRPjyFj43P5aQ5l+2BcX3Ij/VhNNRqDttVMHtw0WBDyeKWHEFgXCbAfZXBTR+PjRHQTf1nsgBK7XDZZ/D/Wd0nqA5Bx7AtdgKLOyUjlM3Mw0gFwmNoB0Y5TouAwuAcgl8MnZ2UUSzcqe9rbg=',
-        'referer': 'https://www.zara.com/it/it/woman-series-serie70-l3288.html?v1=2105810',
+        # 'cookie': 'rid=21fbe0fa-f2fa-4691-8120-75054458243e; storepath=it%2Fit; OptanonAlertBoxClosed=2023-01-18T22:45:01.565Z; migrated=true; bm_sz=4F81DEF957F0F1FB545D6C50EFC316EB~YAAQFmURAh21Jc6FAQAAU0jbzxI96PC/hVh0VMIiI9C+N+OViQ5QswoBM71jaR3eQ9Onj52MqcxCr2rKJz2Oc7FFDxGB87Nrf/YYJYNmClzt97H5vlnJIbF3xNn0ZF/q1aSp6yEOiAAWtbOp6pCxRzAdHSPCY3eJVjvoGSv8g80n7izFJBXYlUUrtDaW4ikj9zxUWLet2H62LchzCbjMTXbKQ+uRDoqNiVyeApzMuSEC/OVvvn1Hw4LV1xYDGzrYrnA0H4w94MCNI8EpM862JXiFo9Vwn6Ri+ARsuB3jB9nF~4273204~4538935; bm_mi=061D1F0CEA3474EC36F692657C663E9C~YAAQFmURAjS1Jc6FAQAAzUnbzxLawp8+RLRTbt8ysrjzkZbyTxKSP0Ry3vlfWDDAMbKCDIrKDnUhR4JwRVQ9coLjrjViE2x93y705IhrjIHKVeyWAnizg+9W/s3Byl+LEYUSvucPTY2wKI/y0tzcUn58Vp6Wb53DVjIn5Zq+2LNuPzYMs2UUhanE8CmQ4x3Q/CG2Iv6biIqldG9JXbnNWCS3VJk0qfe+aUOwXphdLoR7CfmD2SkNkiBFu8foE6VqlZ9Y8B/e/FuRE9V3umSXdaKUyG99uofRnvOCfNwOE0i4GL92GccJ4hghdpC4TBU=~1; ITXSESSIONID=ad27220a9d834b6fa3a3ac280c8c4b0a; IDROSTA=6bfb66adb6f9:1c60ef0fb755a418886f40c0b; cart-was-updated-in-standard=true; OptanonConsent=isGpcEnabled=0&datestamp=Fri+Jan+20+2023+16%3A45%3A52+GMT%2B0100+(Ora+standard+dell%E2%80%99Europa+centrale)&version=6.28.0&isIABGlobal=false&hosts=&consentId=78e8f2ca-2010-49be-a2fe-125a232b071d&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0002%3A1%2CC0003%3A1%2CC0004%3A1&geolocation=IT%3B34&AwaitingReconsent=false; _abck=3E6AFB0791922E22A17904BBE6F2A5E1~-1~YAAQJmURAjB2GMOFAQAAdqTdzwmKXJBwsl6qxmagZdfTLc/QzCziVat86Sw5WGOk+pJYMIrudSh9ucDskeD8jYvab1FSrsL/Z+8OTyepjG8Ls4LJw3QMZgLTXEk8vhoPU0W6LLqz5vthDJDSYKYrCHeYflK+HiOytzNpEDnvi4aNrSzF5sfZ0C0Psm7ux2Xgf4/SnS3QXR05yv4XVrG4jULoNm70HYjMPjPPU+x49X9B6OWjYeTmXFOHZ/oMGUYz5l37CAC53CF0Q/r3vOjI9wn4eXy7oyQvfuWM2YxwUQAK5oajjCc3JN1P6qyCxwxS+NKu7ihEtljNeWp76VNYpKlUFHLPajAcR9M/k6RDvHqVWpRxwU1RGRrimJ1f3L62tp3VVhvsgs0wjPh70HH/Rdlqz/zi~0~-1~-1; ak_bmsc=DAF1D88845050C877F2745B43615FD61~000000000000000000000000000000~YAAQJmURAjl2GMOFAQAAYqXdzxKoD5eUbeRh9VTy/Mw6WtttbJhueJQA0w/ybektBX5W9fihSYu0j0N96I/H3XCebtApXOE5N38+qNxVyXGIailm3c/WjrdWZEHO0wENQNgZqPOm6FM0mEInP6aBghxmiFgfy+VE2R7T+rFiNVAd884O4BqnnfOpDIgnduWYLxcCD+tA6DfP0Vl/Ypyc4gn/PHs2MKAN+fXI4R+lC2WE/JpF3zqkjw+QXaX4nzQ0IM1OE5i7Bc+fGfJycPmb8Lc80cIeVtgDvItXy/HZnY/84wtE0dwc2sVnELVAUAmSuaB9MzH0KFIFRLNkyvxjkHGne0+8c/xa5lLhoIXuXToA52IFRhbff2hJ5a3EUgXab0Mt2f9a4LxMgwydtNqQ6GuimftoeAneqDPYI6EOI/XEa6ELm3AsbGl4G4MGXoAyK65bJw51jirXFyHftijnNdnHleLHZSLbkit4ydGSA91gjcAS2A==; bm_sv=F9EE7264D11CF28D68A6F03714B2FF0F~YAAQJmURAjp2GMOFAQAAYqXdzxItN945go7i2bjwgs35vnQMvbNZehYrnmME5oH6+bsMJyCx38QMOfuf70SiNCixkFPNJxDKoZnzUV0x0YpguAnXeyI9V7uH9VjmSNnhdkihBFIWMmPOltz8FtHUulYtHXcacLv0OcIQgRsXEWMwgq1wNtof84VXDuo5CpgqsUaBus0CO0C1lrAlSQQvW4PMy1HHqCDU1v3gAnX2O9aljaK6CVd6cPYx1kuPHY4=~1',
+        'referer': 'https://www.zara.com/it/it/donna-prezzi-speciali-l1314.html?v1=2105311',
         'sec-ch-ua': '"Not_A Brand";v="99", "Google Chrome";v="109", "Chromium";v="109"',
         'sec-ch-ua-mobile': '?0',
         'sec-ch-ua-platform': '"Linux"',
@@ -40,7 +42,7 @@ def getLinks():
     }
 
     params = {
-        'v1': '2105810',
+        'v1': '2105311',
     }
 
 
@@ -51,12 +53,12 @@ def getLinks():
 
 
     for page_nr in range(10):
-        page =  requests.get(
-                   'https://www.zara.com/it/it/woman-series-serie70-l3288.html',
-                    params=params,
-                    cookies=cookies,
-                    headers=headers,
-                    )
+        page = requests.get(
+            'https://www.zara.com/it/it/donna-prezzi-speciali-l1314.html',
+            params=params,
+            cookies=cookies,
+            headers=headers,
+)
         # If no page is founded exit
         if page.status_code != 200:
             print(page.status_code)
