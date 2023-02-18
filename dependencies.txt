@@ -1,7 +1,6 @@
 telepot
 psycopg2
 requests
-pdfkit
 bs4
 selenium
 
