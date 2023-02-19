@@ -110,5 +110,5 @@ while 1:
                   bot.sendMessage(int(u[0]), url[0])  
             user_sql.insertLink(url[0])
 
-    time.sleep(30)
+    time.sleep(45)
     #time.sleep((60.0 * 1) - ((time.time() - starttime) % 60.ticketToday.getTicketToday(chat_id)ticketToday.getTicketToday(chat_id)0))

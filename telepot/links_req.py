@@ -42,9 +42,9 @@ def getLinks(link="https://www.zara.com/it/it/woman-sale-l5503.html"):
 
     #  id="onetrust-accept-btn-handler"
 
-    for page_nr in range(1):
+    for page_nr in range(6):
 
-        webdriver.get(link)
+        webdriver.get(link + "?page=" + str(page_nr+1))
 
 
         #webdriver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
@@ -57,7 +57,6 @@ def getLinks(link="https://www.zara.com/it/it/woman-sale-l5503.html"):
             break
 
         ul_list = soup.find_all("ul", class_="product-grid__product-list")
-        print(ul_list)
         for ul in ul_list:
             li_list = ul.find_all("li", class_="product-grid-block-dynamic")
 
@@ -72,7 +71,7 @@ def getLinks(link="https://www.zara.com/it/it/woman-sale-l5503.html"):
                     for a in all_a:
                         links_list.append((a['href'], price_formated))
 
-    print(len(links_list))
+        print(str(page_nr) ,len(links_list))
     webdriver.close()
     return links_list
 
