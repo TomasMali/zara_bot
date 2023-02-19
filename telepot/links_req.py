@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 
 
-
+#https://www.zara.com/it/it/uomo-prezzi-speciali-l806.htm
 
 
 
@@ -17,7 +17,7 @@ from bs4 import BeautifulSoup
 # options.add_argument('--disable-gpu')  # Last I checked this was necessary.
 # webdriver = webdriver.Chrome()
 
-def getLinks():
+def getLinks(link="https://www.zara.com/it/it/woman-sale-l5503.html"):
     from selenium import webdriver
     import time
 
@@ -33,7 +33,7 @@ def getLinks():
 
     links_list = []
 
-    webdriver.get('https://www.zara.com/it/it/woman-sale-l5503.html')
+    webdriver.get(link)
     time.sleep(2)
 
     elem = webdriver.find_element(By.ID, "onetrust-accept-btn-handler")
@@ -44,7 +44,7 @@ def getLinks():
 
     for page_nr in range(1):
 
-        webdriver.get('https://www.zara.com/it/it/woman-sale-l5503.html')
+        webdriver.get(link)
 
 
         #webdriver.execute_script("window.scrollTo(0, document.body.scrollHeight);")

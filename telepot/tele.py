@@ -42,7 +42,7 @@ def on_chat_message(msg):
             # bot.sendMessage(chat_id, 'Benvenuto', reply_markup=keyboard)   
        elif msg['text'] == '🖍 Tutti i saldi':
           keyboard = keyboards.getFilterKeyboard()
-          links = user_sql.getLinks()
+          links = user_sql.getLinks("")
           for link in links:
             bot.sendMessage(chat_id, str(link),reply_markup=keyboard)  
 
@@ -79,7 +79,7 @@ starttime = time.time()
 while 1:
     print("\n tick ogni 10 sec \n")
     list_links = links_req.getLinks()
-    print('Links', list_links)
+  #  print('Links', list_links)
     users = user_sql.getUsers()
     print('Users', users)
 
@@ -88,7 +88,26 @@ while 1:
       if not exsists:
          for u in users:
             if float(url[1]) <= float(u[1]):
-               bot.sendMessage(int(u[0]), url[0])  
+                if float(u[0]) != float(145645559):
+                    bot.sendMessage(int(u[0]), url[0])  
+            user_sql.insertLink(url[0])
+    
+#UOMOOOO
+    print("PER MASCHI")
+    list_links = links_req.getLinks("https://www.zara.com/it/it/uomo-prezzi-speciali-l806.html")
+  #  print('Links', list_links)
+    users = user_sql.getUsers()
+    print('Users', users)
+
+   # users = [(145645559, 40)]
+
+    for url in list_links:
+      exsists = user_sql.link_present(url[0])
+      if not exsists:
+         for u in users:
+            if float(url[1]) <= float(u[1]):
+               if float(u[0]) == float(145645559):
+                  bot.sendMessage(int(u[0]), url[0])  
             user_sql.insertLink(url[0])
 
     time.sleep(30)
